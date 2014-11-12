@@ -1,0 +1,21 @@
+<template name="thing">
+  <h1>{{name}}</h1>
+
+  <h2>Descriptions</h2>
+
+  <form id="new-description" class="form">
+    <div class="form-group">
+      <div class="controls name">
+        <input name="name" type="text" class="form-control" placeholder="Enter a nice description">
+      </div>
+    </div>
+    <input type="submit" value="Create" class="btn btn-primary"/>
+  </form>
+
+  <ul>
+    {{#each descriptions}}
+      <li>{{this.name}}</li>
+    {{/each}}
+  </ul>
+</template>
+

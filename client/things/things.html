@@ -1,0 +1,9 @@
+<template name="things">
+  <ul>
+    {{#each things}}
+      <li>
+        <li><a href="{{pathFor 'thing'}}">{{name}}</a></li>
+      </li>
+    {{/each}}
+  </ul>
+</template>
