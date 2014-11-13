@@ -1,3 +1,5 @@
+Meteor.subscribe('descriptions')
+
 Template.thing.events
   'submit form#new-description': (event) ->
     event.preventDefault()
