@@ -6,7 +6,12 @@
   <div class="row">
     <ul class="col-md-6">
       {{#each descriptions}}
-        <li>{{this.name}}</li>
+        <li>
+          {{this.name}}
+          {{#if ownPost}}
+            [<a href="#" class="delete-description">x</a>]
+          {{/if}}
+        </li>
       {{/each}}
     </ul>
 
