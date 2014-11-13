@@ -2,4 +2,4 @@ Meteor.subscribe('things')
 
 Template.things.helpers
   things: ->
-    Things.find()
+    Things.find({}, { sort: { createdAt: -1 }})
