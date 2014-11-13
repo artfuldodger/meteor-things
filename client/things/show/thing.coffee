@@ -13,7 +13,7 @@ Template.thing.events
       if (error)
         alert(error.reason);
       else
-      $('input[name=name]').val('')
+      $('input[name=name]').val('').focus()
 
   'click .delete-description': (e) ->
     e.preventDefault()
