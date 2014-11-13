@@ -1,23 +1,25 @@
 <template name="thing">
-  <h1>{{name}}</h1>
+  <div class="row">
+    <h1>{{name}} is</h1>
+  </div>
 
-  <h2>Descriptions</h2>
+  <div class="row">
+    <ul class="col-md-6">
+      {{#each descriptions}}
+        <li>{{this.name}}</li>
+      {{/each}}
+    </ul>
 
-  {{#if currentUser}}
-    <form id="new-description" class="form">
-      <div class="form-group">
-        <div class="controls name">
-          <input name="name" type="text" class="form-control" placeholder="Enter a nice description">
+    {{#if currentUser}}
+      <form id="new-description" class="form col-md-6">
+        <div class="form-group">
+          <div class="controls name">
+            <input name="name" type="text" class="form-control" placeholder="Enter a nice description" autofocus="true">
+          </div>
         </div>
-      </div>
-      <input type="submit" value="Create" class="btn btn-primary"/>
-    </form>
-  {{/if}}
-
-  <ul>
-    {{#each descriptions}}
-      <li>{{this.name}}</li>
-    {{/each}}
-  </ul>
+        <input type="submit" value="Create" class="btn btn-primary"/>
+      </form>
+    {{/if}}
+  </div>
 </template>
 
