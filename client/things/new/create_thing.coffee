@@ -11,3 +11,6 @@ Template.createThing.events
         alert(error.reason);
       else
         Router.go('thing', { _id: result })
+
+Template.createThing.rendered = ->
+  $('input[name=name]').focus()

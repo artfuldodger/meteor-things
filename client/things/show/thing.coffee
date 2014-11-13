@@ -27,3 +27,6 @@ Template.thing.helpers
 
   ownPost: ->
     @userId is Meteor.userId()
+
+Template.thing.rendered = ->
+  $('input[name=name]').focus()
