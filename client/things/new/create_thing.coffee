@@ -6,6 +6,8 @@ Template.createThing.events
       name: $('input[name=name]').val()
     }
 
-    thing._id = Things.insert(thing)
-
-    Router.go('thing', thing)
+    Meteor.call 'thingInsert', thing, (error, result) ->
+      if (error)
+        alert(error.reason);
+      else
+        Router.go('thing', { _id: result })

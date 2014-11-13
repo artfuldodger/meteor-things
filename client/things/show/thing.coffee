@@ -7,11 +7,13 @@ Template.thing.events
     description = {
       thingId:   @_id
       name:      $('input[name=name]').val()
-      createdAt: new Date()
     }
 
-    Descriptions.insert(description)
-    $('input[name=name]').val('')
+    Meteor.call 'descriptionInsert', description, (error, result) ->
+      if (error)
+        alert(error.reason);
+      else
+      $('input[name=name]').val('')
 
 Template.thing.helpers
   descriptions: ->
